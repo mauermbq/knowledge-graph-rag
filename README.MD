@@ -15,7 +15,7 @@ Benefits:
 
 The Jyupyter Notebook shows some simple examples which depicts on code level how to to build a knowledge graph structure from text documents and interact with them in a chat like manner.
 
-The code example came from deeplearning.ai short course Knowledge Graphs for RAG. This includes a preprocessde JSON file extracted from 10-k finance reporting format (see SEC's [EDGAR database](https://www.sec.gov/edgar/search/)). 
+The code example came from deeplearning.ai short course "Knowledge Graphs for RAG". This includes a preprocessed JSON file extracted from 10-k finance reporting format (see SEC's [EDGAR database](https://www.sec.gov/edgar/search/)). 
 
 Preprocessing was done with following steps:
 
@@ -25,15 +25,15 @@ Preprocessing was done with following steps:
 - Extracted CIK (Central Index Key) ID which is a company identifier used by the SEC
 - Extracted specific sections of the form (Items 1, 1a, 7, and 7a)
 
-In this repo I did some conceptional review and consolidadet everything in a single Jupyter Notebook which you can run easily in your local environment.
+In this repo I did some conceptional review and consolidated everything in a single Jupyter Notebook which you can run easily in your local environment.
 
 ## Installation
 
-Technically data and vector store is persisted in Neo4J Graph DB. All semantical interaction and chainig is done with the popular open source framework [Langchain](https://www.langchain.com) which allows to buld context-aware, reasoning applications.
+Technically all data and vector store is persisted in Neo4J Graph DB. All semantical interaction and chaining is done by using the popular open source framework [Langchain](https://www.langchain.com) which allows to build context-aware, reasoning applications.
 
 ### Neo4J prerequisites
 
-Take care that `apoc-<current-version>>-core.jar` from labs folder and `neo4j-genai-plugin-<current version>.jar` from priducts folder is available in the plugin folder of your Neo4J instance.
+Take care that `apoc-<current-version>>-core.jar` from labs folder and `neo4j-genai-plugin-<current version>.jar` from products folder is available in the plugin folder of your Neo4J instance.
 
 Note: the community edition is missing the genai plugin.
 
@@ -45,9 +45,12 @@ dbms.security.procedures.unrestricted=apoc.*,genai.*
 dbms.security.procedures.allowlist=apoc.*,genai.*
 ```
 
-The data subfolder contains a more comprhesensive version of th KG. 
+I created a neo4j desktop instance containig the fowllowing databases:
+- neo4j - containing the default movie db from neo4j in order to show the basic concepts, how to interact with a neo4J based knowledge Graph
+- ten-k - you should create an empty DB and knowledge graph construction will be explained and performed in the jupyter notebook
+- ten-k-full - the full graph as provided by the course (sse dump file), last chapter of the notebook uses this
 
-It should be loaded for the chat example
+All source data is publicy available.
 
 ### Python packages
 All required packages are listed in requirments.txt.
