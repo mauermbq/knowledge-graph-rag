@@ -1,0 +1,6 @@
+neo4j
+python-dotenv
+langchain-community
+ipykernel
+langchain-openai
+langchain
