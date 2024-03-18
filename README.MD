@@ -1,4 +1,4 @@
-# RAG with knowlwdge graph
+# RAG with knowledge graph
 
 Retriever-Augmented Generation (RAG) models combine the powers of pre-trained language models with an external knowledge retrieval mechanism to enhance the model's ability to generate more accurate, informative, and contextually relevant responses.
 
